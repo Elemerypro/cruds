@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cruds</title>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css
+    " rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="w-75 mx-auto py-5">
+        <div class="form-floating mb-3">
+            <input oninput="validateInput(this)" type="text" class="form-control border-0 border-bottom" id="productName" placeholder="product name">
+            <div class="alert alert-warning my-2 p-1 d-none">
+                <p>Product name should be started with capital charachter</p>
+            </div>
+            <label for="productName">product name</label>
+            
+        </div>
+        <div class="form-floating mb-3">
+            <input oninput="validateInput(this)" type="number" class="form-control border-0 border-bottom" id="productPrice" placeholder="product price">
+            <div class="alert alert-warning my-2 p-1 d-none">
+                <p>Product price should be contain from 100-999</p>
+            </div>
+            <label for="productPrice">product price</label>
+            
+        </div>
+        <div class="form-floating mb-3">
+            <textarea oninput="validateInput(this)"  class="form-control border-0 border-bottom" id="productDescription" placeholder="product description"></textarea>
+            <div class="alert alert-warning my-2 p-1 d-none">
+                <p>Product description should be contain 6-10 charachters</p>
+            </div>
+            <label for="productDescription">product description</label>
+            
+        </div>
+        <div class="form-floating mb-3">
+            <input oninput="validateInput(this)" type="text" class="form-control border-0 border-bottom" id="productCategory" placeholder="product category">
+            <div class="alert alert-warning my-2 p-1 d-none">
+                <p>Product category should be tv or mobile or screen or laptop</p>
+            </div>
+            <label for="productCategory">product category</label>
+            
+
+            <datalist id="category">
+                <option value="Tv">
+                <option value="Mobile">
+                <option value="Laptop">
+                <option value="Screen">
+            </datalist>
+        </div>
+        <div class="form-floating mb-3">
+            <input onchange="validateInput(this)" type="file" class="form-control border-0 border-bottom" id="productImage" placeholder="product image">
+            <div class="alert alert-warning my-2 p-1 d-none">
+                <p>Product Image should be Inserted</p>
+            </div>
+            <label for="productImage">product image</label>
+        </div>
+        <div class="form-check form-switch my-3">
+            <input class="form-check-input" type="checkbox" role="switch" id="productSale">
+            <label class="form-check-label" for="productSale">product sale</label>
+        </div>
+        <button onclick="addProduct()" id="addbutton" class="btn btn-outline-info w-100">Add Product</button>
+        <button onclick="updateProduct()" id="updatebutton" class="btn btn-outline-warning w-100 d-none">update Product</button>
+
+        
+
+    </div>
+    <input oninput="searchProduct()" type="text" id="searchInput" class="form-control my-3 w-75 mx-auto" placeholder="search product...">
+    <div class="container">
+        <div id="rowData" class="row">
+            
+            
+        </div>
+
+    </div>
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js
+    "></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
